@@ -22,6 +22,8 @@ export function app() {
     //references
     const inputFieldEl = document.getElementById("input-field")
     const addButtonEl = document.getElementById("add-button")
+    const appContainerEl = document.getElementById('app-el')
+    const colorPickerEl = document.getElementById('color-picker')
     
     //listeners
     addButtonEl.addEventListener("click", function() {
@@ -39,10 +41,12 @@ export function app() {
         inputFieldEl.value = ''
         cleanList()
         getProductsFromDB(Object.keys(localStorage))
-        //console.log(entriesOfLocalStorage)
     })
-
-    
+    //Dinamic Background color
+    colorPickerEl.addEventListener('input', function() {
+        let value = colorPickerEl.value
+        appContainerEl.style.filter = `hue-rotate(${value}deg)`
+    })
 
 }
 
