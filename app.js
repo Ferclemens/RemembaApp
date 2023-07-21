@@ -45,7 +45,7 @@ export function app() {
     //Dinamic Background color
     colorPickerEl.addEventListener('input', function() {
         let value = colorPickerEl.value
-        appContainerEl.style.backgroundColor = `hsl(${value}, 97%, 3%)`
+        appContainerEl.style.filter = `hue-rotate(${value}deg)`
     })
 
 }

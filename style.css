@@ -7,46 +7,36 @@
   src: url(./public/fonts/Steven.ttf);
 }
 :root {
-  --background: #b6cb68;
-  --background2: #76C893;
-  --text2: #168aad;
-  --text: #bc4749;
-  --textBrown: #432000;
-  --inputBackground: #DCE1EB;
-  --buttonBackground: #baf71e;
-  --buttonBackground2: #AC485A;
-  --buttonText: #272343;
-  --buttonText2: #FDFDFD; 
+  --titlesColor: #c67529;
+  --titlesShadow: #5712e1;
+  --buttonBackground: #d36a1f;
+  --buttonText2: #d6cfcf; 
+
+  --font: 'Steven', sans-serif;;
 }
 
 html, body {
   margin: 0;
   padding: 0;
-  font-family: 'Steven', sans-serif;
-  /* background-color: var(--background); */
+  font-family: var(--font);
   height: 100vh;
-
-/*   background: linear-gradient(90deg, #c8e74d, #f5a2a1);
-  background-size: 300% 300%;
-  animation: gradient 4s alternate infinite;
+  background-image: url('./public/estrellasBase.gif');
+  background-size: cover;
+  animation: move 25s alternate infinite;
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
-  width: 100%; */
+  width: 100%;
 }
 
-@keyframes gradient {
+@keyframes move {
   0% {
     background-position: 0%;
   }
   100% {
     background-position: 100%;
   }
-}
-#app-el {
-  background-image: url('./public/estrellasBase.gif');
-  background-size: cover;
 }
 .container {
   display: flex;
@@ -56,12 +46,22 @@ html, body {
 }
 .color-picker-container {
   align-self: flex-end;
-  padding: 20px 10px;
-  margin-bottom: 40px;
+  padding: 10px 10px;
+  margin-bottom: 10px;
 }
 .color-picker-container input {
   width: 50px;
   padding: 0;
+}
+.text-up, .text-down {
+  position: absolute;
+  color: var(--titlesColor);
+  text-transform: uppercase;
+  text-shadow: 2px 2px 0 var(--titlesShadow);
+
+}
+.text-down {
+  top: 285px;
 }
 img {
   width: 250px;
@@ -69,28 +69,30 @@ img {
 }
 
 input {
-  color: var(--textBrown);
-  background-color: var(--background);
+  color: var(--buttonBackground);
+  background-color: var(--buttonText2);
   border: 0;
   padding: 15px;
-  border-radius: 8px;
+  border-radius: 4px;
   font-size: 20px;
+  font-family: var(--font);
+  text-transform: uppercase;
   text-align: center;
   margin: 10px 0;
 }
 
 button {
-  color: var(--text);
+  color: var(--buttonText2);
   /*font-weight: bold;*/
   background-color: var(--buttonBackground);
   border: none;
   padding: 15px;
-  border-radius: 8px;
+  border-radius: 4px;
   font-size: 20px;
   text-align: center;
-  font-family: 'Steven','Rubik', sans-serif;
+  font-family: var(--font);
   cursor: pointer;
-  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 4px 4px 0 var(--buttonText2);
 }
 
 ul {
@@ -103,17 +105,17 @@ ul {
 
 ul li {
   font-size: 20px;
-  color: var(--buttonText);
-  /*font-weight: bold;*/
-  background-color: var(--background2);
+  color: var(--buttonBackground);
+  background-color: var(--buttonText2);
   padding: 15px;
-  border-radius: 8px;
+  border-radius: 4px;
   flex-grow: 1;
   text-align: center;
-  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  box-shadow: 4px 4px 0 var(--buttonBackground);
   cursor: pointer;
   transition: 0.2s;
 }
 button:active, ul li:active {
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 4px 4px -12px inset, rgba(0, 0, 0, 0.3) 10px 15px 26px -18px inset;
+  box-shadow: 0px 0px 0 rgba(0, 0, 0, 1);
 }
