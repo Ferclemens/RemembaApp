@@ -83,7 +83,6 @@ input {
 
 button {
   color: var(--buttonText2);
-  /*font-weight: bold;*/
   background-color: var(--buttonBackground);
   border: none;
   padding: 15px;
@@ -93,6 +92,7 @@ button {
   font-family: var(--font);
   cursor: pointer;
   box-shadow: 4px 4px 0 var(--buttonText2);
+  text-transform: uppercase;
 }
 
 ul {
