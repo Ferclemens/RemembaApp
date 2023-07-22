@@ -10,8 +10,8 @@ document.querySelector('#app').innerHTML = `
   <h2 class="text-up">What do you need?</h2>
   <img src="./astronauta.gif">
   <h2 class="text-down">for your next adventure</h2>
-  <input type="text" id="input-field" placeholder="Milanesas">
-  <button id="add-button">ADD TO CART</button>
+  <input type="text" id="input-field" placeholder="Milanesas?">
+  <button id="add-button">add to list</button>
   <ul id="products-list"></ul>
 </div>
 `

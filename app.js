@@ -42,6 +42,7 @@ export function app() {
         cleanList()
         getProductsFromDB(Object.keys(localStorage))
     })
+
     //Dinamic Background color
     colorPickerEl.addEventListener('input', function() {
         let value = colorPickerEl.value
@@ -49,7 +50,7 @@ export function app() {
     })
 
 }
-
+//get product from db
 function getProductsFromDB(array) {
     array.map((id) => {
         let localProduct = localStorage.getItem(id)
@@ -57,6 +58,7 @@ function getProductsFromDB(array) {
     })
 }
 
+//add input value to list
 function appendItemToproductListEl(item) {
     //references
     const productListEl = document.getElementById('products-list')
@@ -78,7 +80,9 @@ function appendItemToproductListEl(item) {
 
         })        
     })
-    productListEl.append(newEl) 
+    if(item !== '') {
+        productListEl.append(newEl) 
+    }
 }
 
 function cleanList() {
