@@ -1,24 +1,27 @@
 @font-face {
-  font-family: 'Steve';
-  src: url(./public/fonts/Steve.ttf);
+  font-family: 'Karma Future';
+  src: url(./public/fonts/Karma-Future.otf);
 }
+
 @font-face {
-  font-family: 'Steven';
-  src: url(./public/fonts/Steven.ttf);
+  font-family: 'Arcade';
+  src: url(./public/fonts/karmatic-arcade.regular.ttf);
 }
+
 :root {
   --titlesColor: #c67529;
   --titlesShadow: #5712e1;
   --buttonBackground: #d36a1f;
   --buttonText2: #d6cfcf; 
 
-  --font: 'Steven', sans-serif;;
+  --font: 'Karma Future', 'sans-serif';
+  --font3: 'Arcade', 'sans-serif';
 }
 
 html, body {
   margin: 0;
   padding: 0;
-  font-family: var(--font);
+  font-family: var(--font3);
   height: 100vh;
   background-image: url('./public/estrellasBase.gif');
   background-size: cover;
@@ -49,23 +52,41 @@ html, body {
   padding: 10px 10px;
   margin-bottom: 10px;
 }
+
+#color-picker {
+  -webkit-appearance: none;
+  width: 75px;
+  height: 20px;
+  border-radius: 2px;
+  box-shadow: 3px 3px 0 var(--titlesShadow);
+}
+#color-picker::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px; 
+  height: 20px;
+  border-radius: 2px;
+  background: var(--buttonBackground); 
+}
 .color-picker-container input {
   width: 50px;
   padding: 0;
 }
 .text-up, .text-down {
   position: absolute;
-  color: var(--titlesColor);
+  color: var(--buttonBackground);
   text-transform: uppercase;
-  text-shadow: 2px 2px 0 var(--titlesShadow);
+  text-shadow: 3px 3px 0 var(--titlesShadow);
+  font-size: 1.6rem;
 
 }
 .text-down {
-  top: 285px;
+  top: 295px;
+  text-align: end;
+  align-self: flex-end;
 }
 img {
   width: 250px;
-  margin:0 auto;
+  margin: 10px auto 25px auto;
 }
 
 input {
@@ -73,12 +94,11 @@ input {
   background-color: var(--buttonText2);
   border: 0;
   padding: 15px;
-  border-radius: 4px;
+  border-radius: 2px;
   font-size: 20px;
   font-family: var(--font);
-  text-transform: uppercase;
   text-align: center;
-  margin: 10px 0;
+  margin: 12px 0 10px 0;
 }
 
 button {
@@ -86,15 +106,18 @@ button {
   background-color: var(--buttonBackground);
   border: none;
   padding: 15px;
-  border-radius: 4px;
+  border-radius: 2px;
   font-size: 20px;
   text-align: center;
-  font-family: var(--font);
+  font-family: var(--font3);
+  
   cursor: pointer;
   box-shadow: 4px 4px 0 var(--buttonText2);
   text-transform: uppercase;
 }
-
+#clean-button {
+  margin-bottom: 20px;
+}
 ul {
   list-style-type: none;
   padding: 0;
@@ -104,14 +127,14 @@ ul {
 }
 
 ul li {
+  font-family: var(--font);
   font-size: 20px;
   color: var(--buttonBackground);
   background-color: var(--buttonText2);
   padding: 15px;
-  border-radius: 4px;
+  border-radius: 2px;
   flex-grow: 1;
   text-align: center;
-  text-transform: uppercase;
   box-shadow: 4px 4px 0 var(--buttonBackground);
   cursor: pointer;
   transition: 0.2s;
