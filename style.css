@@ -49,6 +49,9 @@ html, body {
   padding: 10px 10px;
   margin-bottom: 10px;
 }
+#color-picker {
+  --color-progreso: blue;
+}
 .color-picker-container input {
   width: 50px;
   padding: 0;

@@ -7,7 +7,7 @@ export function app() {
     let idArraySorted = Object.keys(localStorage).map(Number)
     //find the max
     let lastId = Math.max(...idArraySorted)
-    console.log(lastId);
+    console.log('ultimo id registrado',lastId);
     //logic to set id
     console.log(Boolean(Infinity));
     if(lastId == '-Infinity') {
@@ -24,6 +24,7 @@ export function app() {
     const addButtonEl = document.getElementById("add-button")
     const appContainerEl = document.getElementById('app-el')
     const colorPickerEl = document.getElementById('color-picker')
+    const cleanButtonEl = document.getElementById('clean-button')
     
     //listeners
     addButtonEl.addEventListener("click", function() {
@@ -41,6 +42,11 @@ export function app() {
         inputFieldEl.value = ''
         cleanList()
         getProductsFromDB(Object.keys(localStorage))
+    })
+
+    cleanButtonEl.addEventListener('click', function(){
+        localStorage.clear()
+        cleanList()
     })
 
     //Dinamic Background color
@@ -66,7 +72,8 @@ function appendItemToproductListEl(item) {
     let newEl = document.createElement('li')
     newEl.textContent = item
     
-    //listeners
+    //listeners//
+
     newEl.addEventListener('click', function(){
         let value = newEl.textContent
         let entries = Object.entries(localStorage)
