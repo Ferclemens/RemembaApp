@@ -10,7 +10,7 @@ document.querySelector('#app').innerHTML = `
   <h1 class="text-up">What do you <br> need?</h1>
   <img src="./astronauta.gif">
   <h1 class="text-down">for your next <br> adventure</h1>
-  <input type="text" id="input-field" placeholder="Milanesas?">
+  <input type="text" id="input-field" placeholder="Oxygen...?" autofocus>
   <button id="add-button">add to list</button>
   <ul id="products-list"></ul>
   <button id="clean-button">clean</button>
