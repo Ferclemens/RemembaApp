@@ -1,2 +1,6 @@
-# Scrimba-FrontendCareerPath-MarketListApp
-An application that allows you to remember the products you need on your next adventure to the market.
+#Rememba app
+Is a tool to keep a list of the things you need for your next adventure.
+
+- Made with Html, Css and Javascript.
+- Use a localStorage to save list elements and persist it.
+- You can change color style to your liking.
