@@ -152,19 +152,22 @@ button:active, ul li:active {
 .buttons-group {
   display: flex;
   gap: 7px;
+  flex-direction: column;
+  position: absolute;
+  top: 302px;
 }
 .buttons-group a {
-  width: 53px;
-  height: 53px;
+  width: 32px;
+  height: 32px;
   border-radius: 2px;
   background-color: var(--buttonBackground);
-  box-shadow: 4px 4px 0 var(--buttonText2);
+  box-shadow: 2px 2px 0 var(--buttonText2);
 }
 .buttons-group img {
-  width: 40px;
-  height: 40px;
+  width: 28px;
+  height: 28px;
   margin: 0;
-  padding: 7px;
+  padding: 2px;
 }
 .buttons-group a:focus {
   outline: 5px solid var(--titlesShadow);
