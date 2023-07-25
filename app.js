@@ -26,10 +26,11 @@ export function app() {
     const colorPickerEl = document.getElementById('color-picker')
     const cleanButtonEl = document.getElementById('clean-button')
     
+
     //listeners
     addButtonEl.addEventListener("click", function() {
         let inputValue = inputFieldEl.value
-        
+
         function localStorageId() {
             lastId += 1
             idArray.push(lastId)
@@ -44,6 +45,7 @@ export function app() {
         getProductsFromDB(Object.keys(localStorage))
     })
 
+    //clear db
     cleanButtonEl.addEventListener('click', function(){
         localStorage.clear()
         cleanList()
@@ -54,8 +56,10 @@ export function app() {
         let value = colorPickerEl.value
         appContainerEl.style.filter = `hue-rotate(${value}deg)`
     })
+    
 
 }
+
 //get product from db
 function getProductsFromDB(array) {
     array.map((id) => {
@@ -88,7 +92,7 @@ function appendItemToproductListEl(item) {
         })        
     })
     if(item !== '') {
-        productListEl.append(newEl) 
+        productListEl.append(newEl)
     }
 }
 
