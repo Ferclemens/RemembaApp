@@ -1,6 +1,6 @@
 
 export function app() {
-    
+    //save all entries in localStorage
     let entriesOfLocalStorage = Object.entries(localStorage)
     console.log(entriesOfLocalStorage)
     //transform string array to number array
@@ -25,7 +25,8 @@ export function app() {
     const appContainerEl = document.getElementById('app-el')
     const colorPickerEl = document.getElementById('color-picker')
     const cleanButtonEl = document.getElementById('clean-button')
-    
+    const instructionsButtonEl = document.getElementById('instructions-button')
+    const modalInstructionsEl = document.getElementById('instructions')
 
     //listeners
     addButtonEl.addEventListener("click", function() {
@@ -49,6 +50,16 @@ export function app() {
     cleanButtonEl.addEventListener('click', function(){
         localStorage.clear()
         cleanList()
+    })
+
+    //Instructions info open
+    instructionsButtonEl.addEventListener('click', function(){
+        appContainerEl.style.backgroundColor = 'black'
+        modalInstructionsEl.style.display = 'block'
+    })
+    //Instructions info close
+    modalInstructionsEl.addEventListener('click', function(){
+        modalInstructionsEl.style.display = 'none'
     })
 
     //Dinamic Background color

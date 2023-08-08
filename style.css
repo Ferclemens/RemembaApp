@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'Karma Future';
-  src: url(./public/fonts/Karma-Future.otf);
+  src: url(/fonts/Karma-Future.otf);
 }
 
 @font-face {
   font-family: 'Arcade';
-  src: url(./public/fonts/karmatic-arcade.regular.ttf);
+  src: url(/fonts/karmatic-arcade.regular.ttf);
 }
 
 :root {
@@ -23,7 +23,7 @@ html, body {
   padding: 0;
   font-family: var(--font3);
   height: 100vh;
-  background-image: url('./public/estrellasBase.gif');
+  background-image: url('/estrellasBase.gif');
   background-size: cover;
   animation: move 25s alternate infinite;
   position: absolute;
@@ -175,4 +175,24 @@ button:active, ul li:active {
 }
 .buttons-group img:active {
   box-shadow: 0px 0px 0 rgba(0, 0, 0, 1);
+}
+.instructions {
+  position: fixed;
+  top: 15%;
+  padding: 10px 40px;
+  margin: 0 30px;
+  background-color: var(--buttonBackground);
+  box-shadow: 7px 7px 0 var(--buttonText2);
+  border-radius: 2px;
+  color: var(--titlesShadow);
+  font-family: var(--font);
+  font-size: 1.3rem;
+  text-shadow: 2px 2px 0 var(--buttonBackground);
+  display: none;
+  cursor: pointer;
+}
+.instructions-title {
+  text-align: center;
+  font-size: 1.7rem;
+  font-family: var(--font3);
 }
