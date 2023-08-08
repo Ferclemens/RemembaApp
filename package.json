@@ -6,9 +6,14 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "wdio": "wdio run ./wdio.conf.js"
   },
   "devDependencies": {
+    "@wdio/browser-runner": "^8.14.3",
+    "@wdio/cli": "^8.14.4",
+    "@wdio/mocha-framework": "^8.14.0",
+    "@wdio/spec-reporter": "^8.14.0",
     "vite": "^4.4.0"
   }
 }
