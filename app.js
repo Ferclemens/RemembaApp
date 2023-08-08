@@ -27,6 +27,9 @@ export function app() {
     const cleanButtonEl = document.getElementById('clean-button')
     const instructionsButtonEl = document.getElementById('instructions-button')
     const modalInstructionsEl = document.getElementById('instructions')
+    const modalClearWarningEl = document.getElementById('clear-warning')
+    const aceptClearButtonEl = document.getElementById('accept-clear')
+    const cancelClearButtonEl = document.getElementById('cancel-clear')
 
     //listeners
     addButtonEl.addEventListener("click", function() {
@@ -48,8 +51,15 @@ export function app() {
 
     //clear db
     cleanButtonEl.addEventListener('click', function(){
-        localStorage.clear()
-        cleanList()
+        modalClearWarningEl.style.display = 'block'
+        aceptClearButtonEl.addEventListener('click',function(){
+            localStorage.clear()
+            cleanList()
+            modalClearWarningEl.style.display = 'none'
+        })
+        cancelClearButtonEl.addEventListener('click',function(){
+            modalClearWarningEl.style.display = 'none'
+        })
     })
 
     //Instructions info open
@@ -88,7 +98,6 @@ function appendItemToproductListEl(item) {
     newEl.textContent = item
     
     //listeners//
-
     newEl.addEventListener('click', function(){
         let value = newEl.textContent
         let entries = Object.entries(localStorage)
